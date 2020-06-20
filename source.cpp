@@ -5,6 +5,8 @@
 #include <time.h>
 #include <vector>
 
+SceneID treasure_Scene;
+
 // Enemy's attack
 class Attack1 {
 public:
@@ -476,8 +478,10 @@ void gameInit() {
 	game4F_Scene = createScene("minigame4", "./Images/Backgrounds/mini3Background.jpg");
 	tower5F_Scene = createScene("Tower - 3F", "./Images/Backgrounds/Tower_Inside.png");
 	battle5F_Scene = createScene("Black Knight", "./Images/Backgrounds/Battle.png");
-	tower6F_Scene = createScene("congratulations!", "./Images/Backgrounds/Treasure.png");
+	tower6F_Scene = createScene("Tower - 4F", "./Images/Backgrounds/Tower_Inside.png");
+	treasure_Scene = createScene("congratualtions", "./Images/Backgrounds/Treasure.png");
 	game6F_Scene = createScene("Puzzle", "./Images/Backgrounds/Puzzle_6F.png");
+	
 	villageLeftScene = createScene("Village", "./Images/Backgrounds/DayTime.png");
 	// REVISION currentScene =
 	
@@ -1258,7 +1262,7 @@ void puzzleEnd(void) {
 	setObjectImage(puzzleT, "./Images/UI/Puzzle/DoorT_Open.png");
 	puzzleTShown = false;
 
-	currentScene = tower6F_Scene;
+	currentScene = treasure_Scene;
 	enterScene(currentScene);
 }
 
